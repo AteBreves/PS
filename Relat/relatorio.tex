@@ -17,6 +17,10 @@
 \usepackage{grffile}
 \usepackage{caption}
 \usepackage{hyperref}
+
+
+
+
 %\usepackage[outdir=./diagramas]{epstopdf}
 %\usepackage[utf8]{inputenc}
 
@@ -62,6 +66,17 @@ Relatório do projeto realizado no âmbito de Projecto e Seminário\\
 Licenciatura em Engenharia Informática e de Computadores\\[20mm]
 Maio de 2021}
 
+%Gloss-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%\makeglossaries
+
+%\label{smas}
+%\newacronym{smas}{SMAS}{Serviços Municipalizados de Água e Saneamento}
+%\newacronym{pwa}{PWA}{Progressive Web Applications}
+
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 
 \begin{document}
 \pagenumbering{roman}
@@ -106,6 +121,11 @@ O processo de envio de leituras de consumo de água é um processo tecnologicame
 Este projeto pretende colmatar estas situações, propondo a implementação de um sistema informático que permite ao cliente indicar facilmente à empresa o valor que realmente consumiu, não sendo assim necessários acertos de pagamento e permitindo ao cliente e à empresa ter um controlo do valor real de água consumida.\\
 O sistema também apresentará ao utilizador estatísticas e infromações relativas a este serviço, bem como informa-lo-á de situações relacionadas com o pagamento ou outros eventos relacionados.
 
+\cleardoublepage %GLOSS ------------------------------------------------------------------------
+\chapter*{Glossário}
+Interface - Apresentação gráfica dos dados e funcionalidades de um elemento que possibilita interação. \\
+PWA - Progressive Web Applications \\
+SMAS - Serviços Municipalizados de Água e Saneamento \\
 
 %{\bf Palavras-chave:} lista de palavras-chave separadas por ;.
 
@@ -117,6 +137,7 @@ O sistema também apresentará ao utilizador estatísticas e infromações relat
 % Geração do índice de conteúdos
 \cleardoublepage
 \tableofcontents \cleardoublepage
+
 
 % Geração do índice de figuras e de tabelas
 %\listoffigures \cleardoublepage
@@ -142,15 +163,15 @@ O sistema também apresentará ao utilizador estatísticas e infromações relat
 \include{implementacao}
 
 % Capitulo 6
-\include{testes}
+%\include{testes}
 
 % Referências
+\nocite{*}
 \bibliographystyle{unsrt}
 \bibliography{referencias}
 \addcontentsline{toc}{chapter}{Refer\^{e}ncias}
 
 % Apêndices (opcional)
-%\appendix
 %\include{apendiceex}
 
 \end{document} 

@@ -2,9 +2,10 @@
 % Capítulo 2
 %
 \chapter{Trabalho Relacionado} \label{cap:trabrelacionado}
-Neste capítulo vamos abordar sistemas relacionados com o nosso trabalho e alguns sistemas semelhantes ao que vamos desenvolver.\\
+Neste capítulo vamos abordar sistemas relacionados com o nosso trabalho e alguns sistemas semelhantes ao que vamos desenvolver. Vamos também debater sobre algumas tecnologias e plataformas que vamos utilizar no desenvolvimento do projeto.\\
 A elaboração deste projeto envolve vários componentes externos, pelo que será importante analisar os vários componentes com os quais vamos interagir.\\
-Na secção \ref{sec:cont} vamos analisar os contadores de água com os quais o nosso sistema vai interagir. Nas secções \ref{sec:appsmas} e \ref{sec:telemetria} vamos abordar algumas soluções já existentes no mercado com funções semelhantes à do sistema que vamos desenvolver.
+Na secção \ref{sec:cont} vamos analisar os contadores de água com os quais o nosso sistema vai interagir. Nas secções \ref{sec:appsmas} e \ref{sec:telemetria} vamos abordar algumas soluções já existentes no mercado com funções semelhantes à do sistema que vamos desenvolver.Na secção \ref{sec:pwa} vamos apresentar o tipo de sistema que vamos desenvolver e na secção \ref{sec:outsystems} a ferramenta que vamos utilizar para o desenvolver.
+
 
 \section{Contadores de Água} \label{sec:cont}
 Para a realização deste projeto é importante analisar os dispositivos contadores de água, dado que o nosso sistema vai interagir com eles, nomeadamente, obtendo a sua medição.
@@ -27,3 +28,13 @@ Os Serviços Municipalizados de Água e Saneamento de Almada e de Sintra já pos
 
 \section{Sistemas de Telemetria} \label{sec:telemetria}
 Existem, aplicados a esta área, sistemas de telemetria, ou seja, sistemas que efetuam a medição e comunicação das leituras. Alguns destes sistemas vêm incorporados no aparelho contador, existindo também outros que são um dispositivo separado \cite{janz:impji}. Porém, neste último caso, o contador de água tem de ser construído com características próprias que lhe permitam comunicar com estes dispositivos.
+
+\section{Progressive Web Apps} \label{sec:pwa}
+Progresive Web Apps (PWA) ou aplicações web progressivas são aplicações que podem funcionar em qualquer dispositivo que possua um web browser, sendo a principal característica que as define ser a junção das vantagens das aplicações web normais e das aplicações nativas, específicas para plataformas. \\
+As aplicações web são aplicações que funcionam em qualquer dispositivo que suporte um web browser, como computadores e smartphones. Isto permite-nos ter uma base de código comum que funciona em vários dispositivos, ao contrário do que acontece com as aplicações nativas, o que resulta em construir e suportar menos código. \\
+Porém, as PWA permitem-nos, tal como as aplicações nativas e ao contrário das restantes aplicações web, utilizar funções específicas do dispositivo, como aceder à localização, interagir com dados do dispositivo ou utilizar notificações. 
+
+\section{Outsystems Service Studio} \label{sec:outsystems}
+Outsystems Service Studio é uma ferramenta que nos permite desenvolver PWAs. Esta ferramenta permite-nos desenvolver as várias componentes do sistema como a lógica do sistema, a sua componente visual de interação com o utilizador e o seu modelo de dados, o que é vantajoso, na medida em que apenas é necessário utilizar uma plataforma para a elaboração do sistema. \\
+É considerada uma plataforma ‘low-code’, dado que a plataforma gera automaticamente algum código que podemos utilizar no nosso projeto, o que ajuda no desenvolvimento e manutenção do projeto.
+
