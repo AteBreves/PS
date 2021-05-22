@@ -1,7 +1,7 @@
 \chapter{Análise do Problema} \label{cap:analise}
 
 Tal como apresentado anteriormente, este projeto consiste na realização do sistema informático que designamos por Water Watcher, constituído por três partes: a interface para os utilizadores, o elemento servidor e o elemento que armazena os dados. Estes irão interagir com o sistema informático que a empresa de sistema de fornecimento de água já possui e utiliza.\\
-A figura \ref{fig:modelo} representa o sistema e os seus componentes. O servidor e a interface do utilizador são componentes intrínsecos do sistema, pelo que o sistema não existiria sem eles, enquanto que o sistema de gestão de base de dados será um componente do sistema porém independente. O sistema de gestão de consumos é um outro sistema com o qual o nosso vai comunicar.
+A figura \ref{fig:modelo} representa o sistema e os seus componentes. O servidor e a interface do utilizador são componentes intrínsecos do sistema, pelo que o sistema não existiria sem eles, enquanto que o sistema de gestão de base de dados será um componente do sistema porém independente. O sistema de gestão de consumos é um outro sistema com o qual o nosso vai comunicar, sendo este sistema o sistema que a empresa fornecedora de água já utiliza para gerir os dados relativos ao seu serviço.
 
 \vspace{1cm} %espaço
 
@@ -17,7 +17,7 @@ Leituras erradas deverão, de forma geral, ser substituídas pela estimativa já
 Este componente poderá também apresentar informações relativas ao consumo de água como estatísticas de consumo em intervalos de tempo definidos, aviso de gastos menores/maiores que o esperado e outras possíveis informações pertinentes ao cliente sobre este serviço.\\
 Outro elemento deste sistema informático será um servidor, cuja função é, resumidamente, interpretar os caracteres das imagens captadas pelos utilizadores e receber os pedidos de informação das interfaces dos utilizadores, comunicá-los ao elemento que armazena os dados e encaminhar a devida resposta de novo à interface dos utilizadores. Também será o servidor o responsável por assegurar a integridade das comunicações, como verificar a origem das mensagens e se não houve alterações das mensagens durante o seu transporte, e garantir o correto acesso das várias funcionalidades do sistema apenas aos utilizadores autorizados.\\
 
-Neste capítulo, nas secções \ref{sec:req_sis}, \ref{sec:req_ut}, \ref{sec:req_ut2}, \ref{sec:req_admin} e \ref{sec:req_servidor} vamos explorar os requisitos que o sistema e os seus elementos devem cumprir e nas secções \ref{sec:casos_uso}, \ref{sec:casos_servidor} e \ref{sec:casos_iu} os vários casos de uso.
+Neste capítulo, na secção \ref{sec:req_sis} vamos explorar os requisitos deve cumprir, nas secções \ref{sec:req_ut}, \ref{sec:req_ut2} e \ref{sec:req_admin} os requisitos da interface dos utilizadores e na secção \ref{sec:req_servidor} vamos explorar os requisitos do servidor. Nas secções \ref{sec:casos_uso}, \ref{sec:casos_servidor} e \ref{sec:casos_iu} vamos abordar, respetivamente, os casos de uso do sistema, do servidor e da interface dos utilizadores.
 
 % REQUISITOS DO SISTEMA
 \section{Requisitos do Sistema} \label{sec:req_sis}
@@ -34,7 +34,7 @@ O sistema terá uma interface de utilização para que os utilizadores possam f�
 %TABELA INTERACAO UTILIZADOR
 \begin{center}
 \captionof{table}{Requisitos funcionais da interface com o utilizador.} 
-\begin{tabular}[c]{||c  c ||}  %para limitar tamanho é p{1.5cm} em vez de um c
+\begin{tabular}[c]{c  c }  %para limitar tamanho é p{1.5cm} em vez de um c
 \hline
 Requisito & Função\\
 \hline
@@ -58,12 +58,12 @@ Terá de existir outra interface que permita que o utilizador se autentique. A a
 
 
 \section{Interface para o Administrador} \label{sec:req_admin}
-O sistema deverá ter na sua composição uma interface de utilização para os utilizadores administradores. Os vários requisitos funcionais e não funcionais desta interface estão apresentados nas tabelas \ref{tab:req_admin_f} e \ref{tab:req_admin_n}, respetivamente.
+O sistema deverá ter na sua composição uma interface de utilização para os utilizadores administradores. Os vários requisitos funcionais e não funcionais desta interface estão apresentados, respetivamente, nas tabelas \ref{tab:req_admin_f} e \ref{tab:req_admin_n}.
 
 %TABELA INTERACAO ADMIN FUNCIONAL
 \begin{center}
 \captionof{table}{Requisitos funcionais da interface com utilizadores com permissões de administrador.} 
-\begin{tabular}[c]{||c c||} 
+\begin{tabular}[c]{c c} 
 \hline
 Requisito & Função\\
 \hline
@@ -82,7 +82,7 @@ Esta interface deverá ter um papel de gestão dos dados dos clientes e outras f
 %TABELA INTERACAO ADMIN FUNCIONAL NAO FUNC
 \begin{center}
 \captionof{table}{Requisitos não funcionais da interface com utilizadores com permissões de administrador.} 
-\begin{tabular}[c]{||c c||} 
+\begin{tabular}[c]{c c} 
 \hline
 Requisito & Função\\
 \hline
@@ -107,7 +107,7 @@ O servidor deverá cumprir os requisitos não funcionais presentes na tabela \re
 %TABELA REQ SERVIDOR FUNCIONAIS
 \begin{center}
 \captionof{table}{Requisitos não funcionais do servidor.} 
-\begin{tabular}[c]{||c c||} 
+\begin{tabular}[c]{c c} 
 \hline
 Requisito & Função\\ %[0.5ex] 
 \hline
@@ -127,7 +127,7 @@ Requisito & Função\\ %[0.5ex]
 %TABELA REQ SERVIDOR NAO FUNCIONAIS
 \begin{center}
 \captionof{table}{Requisitos funcionais do servidor.} 
-\begin{tabular}[c]{||c c||} 
+\begin{tabular}[c]{c c} 
 \hline
 Requisito & Função\\ %[0.5ex] 
 \hline
