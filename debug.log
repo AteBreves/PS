@@ -1,0 +1,2 @@
+[0601/151447.194:ERROR:file_io_win.cc(170)] CreateFile C:\Users\Lucas\AppData\Local\OutSystems\User Data\Crashpad\reports\7f430986-43fe-4eb8-a6ef-67eb822c1c25.dmp: O sistema não conseguiu localizar o caminho especificado. (0x3)
+[0601/151447.219:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
