@@ -20,7 +20,6 @@ namespace OutSystems.NssNumberOCR {
 		/// <param name="ssconfidence"></param>
 		public void MssOCR(byte[] ssimage, out string ssresult, out decimal ssconfidence) {
 			ssresult = "";
-			ssconfidence = 69M;
 
             string appPath = System.Web.HttpContext.Current.Server.MapPath(System.Web.HttpContext.Current.Request.ApplicationPath);
             string path = appPath + @"\tessdata";
@@ -34,7 +33,7 @@ namespace OutSystems.NssNumberOCR {
 				{
 					api.SetImage(pix);
 					ssresult = api.GetUTF8Text();
-					//ssconfidence = api.MeanTextConf;
+					ssconfidence = api.MeanTextConf;
 				}
 			}			
 		} // MssOCR
