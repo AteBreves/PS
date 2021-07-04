@@ -1,0 +1,4 @@
+C:\Users\Lucas\source\repos\random\random\obj\Debug\netcoreapp3.1\random.csproj.AssemblyReference.cache
+C:\Users\Lucas\source\repos\random\random\obj\Debug\netcoreapp3.1\random.AssemblyInfoInputs.cache
+C:\Users\Lucas\source\repos\random\random\obj\Debug\netcoreapp3.1\random.AssemblyInfo.cs
+C:\Users\Lucas\source\repos\random\random\obj\Debug\netcoreapp3.1\random.csproj.CoreCompileInputs.cache

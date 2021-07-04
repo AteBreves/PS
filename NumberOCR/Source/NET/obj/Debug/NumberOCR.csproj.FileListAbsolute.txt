@@ -6,3 +6,5 @@ E:\Programas Universidade\8 Semestre\PS\NumberOCR\Source\NET\obj\Debug\NumberOCR
 E:\Programas Universidade\8 Semestre\PS\NumberOCR\Source\NET\obj\Debug\NumberOCR.csproj.CopyComplete
 E:\Programas Universidade\8 Semestre\PS\NumberOCR\Source\NET\obj\Debug\OutSystems.NssNumberOCR.dll
 E:\Programas Universidade\8 Semestre\PS\NumberOCR\Source\NET\obj\Debug\OutSystems.NssNumberOCR.pdb
+E:\Programas Universidade\8 Semestre\PS\NumberOCR\Source\NET\bin\leptonica.net.dll
+E:\Programas Universidade\8 Semestre\PS\NumberOCR\Source\NET\bin\tesseract.net.dll

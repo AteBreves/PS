@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OutSystems.NssNumberOCR</name>
+    </assembly>
+    <members>
+        <member name="M:OutSystems.NssNumberOCR.CssNumberOCR.main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="ssimage"></param>
+            <param name="ssresult"></param>
+            <param name="ssconfidence"></param>
+        </member>
+        <member name="M:OutSystems.NssNumberOCR.IssNumberOCR.MssOCR(System.Byte[],System.String@,System.Decimal@)">
+            <summary>
+            
+            </summary>
+            <param name="ssimage"></param>
+            <param name="ssresult"></param>
+            <param name="ssconfidence"></param>
+        </member>
+    </members>
+</doc>
