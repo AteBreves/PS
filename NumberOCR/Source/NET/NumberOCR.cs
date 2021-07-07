@@ -37,10 +37,9 @@ namespace OutSystems.NssNumberOCR {
 			ImageConverter converter = new ImageConverter();
 			ssimage = (byte[])converter.ConvertTo(bitmap, typeof(byte[]));
 
-
 			string appPath = System.Web.HttpContext.Current.Server.MapPath(System.Web.HttpContext.Current.Request.ApplicationPath);
-            string path = appPath + @"\tessdata";
-            if (!Directory.Exists(path))
+			string path = appPath + @"\tessdata";
+			if (!Directory.Exists(path))
 			{
 				path = appPath + @"\bin2\hidden_resources";
 			}
@@ -52,7 +51,7 @@ namespace OutSystems.NssNumberOCR {
 					ssresult = api.GetUTF8Text();
 					ssconfidence = api.MeanTextConf;
 				}
-			}			
+			}
 		} // MssOCR
 
 	} // CssNumberOCR

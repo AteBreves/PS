@@ -74,7 +74,7 @@ Por fim, é possível aceder ao ecrã de definições representado na figura \re
 
 Nesta página, o utilizador pode ver e editar as suas informações e preferências da aplicação. Mais concretamente, também é possível gerir os contadores associados à sua conta, no ecrã da figura \ref{fig:5}.
 
-\section{Reconhecimento de Caracteres} \label{sec:dados}
+\section{Reconhecimento de Caracteres} \label{caracteres}
 Este sistema vai reconhecer caracteres presentes nas fotografias dos contadores dos clientes. Para melhorar a qualidade e eficácia do reconhecimento de caracteres decidimos estudar e testar vários tipos de imagens de um contador para perceber em quais é que o reconhecimento de caracteres era mais eficaz.
 Para este teste utilizamos as seguintes imagens:\\
 \par1-Imagem digital de números pretos em fundo branco, de referência.
@@ -86,11 +86,17 @@ Para este teste utilizamos as seguintes imagens:\\
 
 Obtivemos mais sucesso, ou seja, o texto obtido através do reconhecimento de caracteres ser mais próximo dos números reais presentes no contador, com a fotografia restringida ao mostrador do contador com as cores invertidas.
 
+\section{Programa de Controlo Semanal} \label{rec}
+Existirá uma forma de os clientes do serviço poderem ter um maior controlo do seu consumo de água, nomeadamente, saber o seu gasto em períodos menores do que mensalmente.\\
+Propomos a implementação de um processo, totalmente opcional e que não interfere com a restante utilização do sistema, que lembra os utilizadores semanalmente de enviar a contagem do seu contador.\\
+Estes envios terão como propósito poder apresentar ao utilizador o seu gasto de água semanal, permitindo que este, por exemplo, alterando os seus hábitos de consumo de água, consiga observar alterações mais imediatas nas suas contagens. Por outro lado, a empresa terá também acesso a estas contagens.\\
+Estas contagens têm uma função meramente informativa e são de carater opcional.
 
 
-\section{Reconhecimento de Caracteres} \label{sec53}
+\section{Biblioteca de Reconhecimento de Caracteres} \label{rec}
+Para o reconhecimento de caracteres elaborámos uma extensão Outsystems que tem por base a biblioteca Tesseract \cite{tesseract}.\\
+A biblioteca Tesseract é uma biblioteca open source muito utilizada no reconhecimento de caracteres em imagem por ser facilmente configurável consoante a linguagem ou tipo de caracteres que se pretende extrair. Implementa uma rede neuronal para a deteção dos caracteres e utiliza um ficheiro de configuração configurado para detetar dígitos presente em \ref{tes:digits}.
 
-Para o reconhecimento de caracteres elaborámos uma extensão Outsystems que tem por base a biblioteca Tessreact \cite{tesseract}. O ficheiro de configuração utilizado foi o [testar os vários ficheiros digits]. 
 
 
 
