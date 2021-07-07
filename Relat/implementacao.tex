@@ -79,8 +79,9 @@ Posteriormente convertemos esse array de base 64 em um array de bit, que é a fo
 \end{figure}
 
 Depois de o servidor efetuar o OCR, é enviado para a aplicação cliente o resultado desta operação e um número compreendido entre 0 e 100 que representa a confiança no resultado, ou seja, a probabilidade calculada pelo módulo de OCR de o resultado estar correto.\\
-Caso a confiança seja menor de 75, é apresentado ao utilizador uma mensagem de erro de forma a que o utilizador envie uma nova fotografia.\\
-Se for maior ou igual a 75, é apresentado ao utilizador o texto obtido para que este possa confirmar se este está correto e, nesse caso, submeter a sua leitura ou para que este possa enviar uma nova fotografia.\\
+Caso a confiança seja menor de 65, é apresentado ao utilizador uma mensagem de erro de forma a que o utilizador envie uma nova fotografia.\\
+Se for maior ou igual a 65, é apresentado ao utilizador o texto obtido para que este possa confirmar se este está correto e, nesse caso, submeter a sua leitura ou para que este possa enviar uma nova fotografia.\\
+Durante a submissão da leitura, no servidor, é verificado se o contador relativo à contagem enviada, que é passado como parâmetro \textit{query string}, pertence ao utilizador que está a enviar o pedido.
 
 \section{Ecrã de Administração} \label{ecra:admin} %ECRA Admin #####################################
 A página para os administradores permite a utilizadores com papeis de administração notificar utilizadores sob a forma de email, bem como apagar utilizadores da base de dados do sistema.\\
