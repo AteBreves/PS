@@ -89,10 +89,13 @@ A notificação de utilizadores inicia-se quando o utilizador seleciona o destin
 Como referido anteriormente, este utilizador também poderá apagar outros utilizadores da base de dados do sistema, apenas indicando o número de cliente do utilizador a apagar. Esta ação apaga as contagens semanais, os seus contadores e a sua informação pessoal na base de dados do sistema.
 
 
+\section{Módulo de Testes WaterWatcherTests} \label{ecra:admin} %MODULO Tests ###############################
 
-
-
-
+Para o desenvolvimento de testes unitários aos componentes desenvolvidos, elaborámos um módulo de testes também na plataforma Outsystems.\\
+Este módulo está desenvolvido segundo a metodologia BDD (Behavior Driven Development) \cite{bddtests}, ou seja, desenvolver testes que replicam o comportamento de um utilizador na aplicação, testando as funções e processos envolvidos nessas ações e ao mesmo tempo descrevendo textualmente o que é que está a ocorrer.\\
+Esta aplicação possuí uma interface gráfica que nos permite observar o resultado dos cenários de teste e das ações que os compõem. Esta interface gráfica é composta por duas páginas: a página que apresenta os resultados dos testes e uma página de testes ao reconhecimento de caracteres.\\
+Cada teste individual a uma funcionalidade da aplicação, denominado de cenário, é composto por vários passos que se encaixam em uma de três fases do teste. A primeira fase (Given) descreve o contexto do sistema aquando do início do teste e configura o sistema para o estado pretendido para que possamos começar o teste. A segunda fase (When) descreve um evento ou interação com o sistema, que pode ser iniciada por um utilizador ou outro sistema. A terceira e última fase (Then) é quando comparamos o resultado obtido com o resultado expectado.\\
+A página de teste ao OCR permite-nos submeter imagens para a deteção de caracteres e observar o resultado e confiança obtidos.
 
 
 
