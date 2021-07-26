@@ -72,7 +72,8 @@
 \end{tabular}\\[10mm]
 % Deixar o indicador respetivo em função da versão do relatório.
 Relatório do projeto realizado no âmbito de Projecto e Seminário\\
-Licenciatura em Engenharia Informática e de Computadores\\[20mm]
+Licenciatura em Engenharia Informática e de Computadores\\[10mm]
+Departamento de Engenharia Eletrónica e Telecomunicações e de Computadores\\[20mm]
 Maio de 2021}
 
 %Gloss-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -83,9 +84,6 @@ Maio de 2021}
 %\newacronym{pwa}{PWA}{Progressive Web Applications}
 
 %------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
 
 \begin{document}
 \pagenumbering{roman}
@@ -119,16 +117,17 @@ Maio de 2021}
 \end{tabular}\\[10mm]
 
 Relatório do projeto realizado no âmbito de Projecto e Seminário\\
-Licenciatura em Engenharia Informática e de Computadores\\[20mm]
+Licenciatura em Engenharia Informática e de Computadores\\[10mm]
+Departamento de Engenharia Eletrónica e Telecomunicações e de Computadores\\[20mm]
 Maio de 2021\\
 \end{center}
 
 % Página de resumo em Português
 \cleardoublepage
 \chapter*{Resumo}
-O processo de envio de leituras de consumo de água é um processo tecnologicamente desatualizado, na medida que o cliente paga, por norma, um valor baseado num consumo estimado, pelo que é frequente existirem erros nas estimativas, cuja resolução é algo morosa e burocrática.\\
-Este projeto pretende colmatar estas situações, propondo a implementação de um sistema informático que permite ao cliente indicar facilmente à empresa o valor que realmente consumiu, não sendo assim necessários acertos de pagamento e permitindo ao cliente e à empresa ter um controlo do valor real de água consumida.\\
-O sistema também apresentará ao utilizador estatísticas e infromações relativas a este serviço, bem como informá-lo-á de situações relacionadas com o pagamento ou outros eventos relacionados.
+O processo de envio de leituras de consumo de água é um processo tecnologicamente desatualizado, na medida que o cliente paga, por norma, um valor baseado num consumo estimado, pelo que é frequente existirem erros nas estimativas, cuja resolução é algo morosa e burocrática.\par
+Este projeto pretende colmatar estas situações, propondo a implementação de um sistema informático que permite ao cliente indicar de forma simples e prática, ao prestador de serviços, o valor que realmente consumiu. Com a abordagem proposta, não são necessários acertos de pagamento e é disponibilizado tanto o cliente como ao prestador de serviços um maior controlo do valor real de água consumida.\par
+O sistema informático disponibiliza uma aplicação \textit{web} que poderá ser acedida através de \textit{smartphones} e computadores e que, para além de permitir o envio de leituras, apresentará ao utilizador estatísticas e infromações relativas a este serviço, bem como informá-lo-á de situações relacionadas com o pagamento ou outros eventos relacionados.
 \vspace{1.5cm}
 
 {\bf Palavras-chave:} Leituras de Contadores de Água; Sistema Informático; Progressive Web Apps.
@@ -138,13 +137,13 @@ O sistema também apresentará ao utilizador estatísticas e infromações relat
 
 \begin{tabular}[l]{l  p{11cm}} 
 
-Interface de Utilizador: & Apresentação gráfica dos dados e funcionalidades de um elemento que possibilita interação.\\ 
+Interface de Utilizador & Apresentação gráfica dos dados e funcionalidades de um elemento que possibilita interação.\\ 
 
-PWA:  & Progressive Web Applications\\
+PWA  & Progressive Web Applications\\
 
-SMAS: & Serviços Municipalizados de Água e Saneamento\\
+SMAS & Serviços Municipalizados de Água e Saneamento\\
 
-OCR: & Optical Character Recognition ou Reconhecimento Ótico de Caracteres\\ 
+OCR & Optical Character Recognition ou Reconhecimento Ótico de Caracteres\\ 
 
 \end{tabular}
 \label{tab:req_utilizador}
@@ -156,12 +155,14 @@ OCR: & Optical Character Recognition ou Reconhecimento Ótico de Caracteres\\
 
 % Geração do índice de conteúdos
 \cleardoublepage
-\tableofcontents \cleardoublepage
+\tableofcontents
 
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\listfigurename}\listoffigures
 
-% Geração do índice de figuras e de tabelas
-\listoffigures \cleardoublepage
-\listoftables \cleardoublepage
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\listtablename}\listoftables
+
 
 % Reiniciar a numeração de páginas
 \setcounter{page}{1}
@@ -183,7 +184,7 @@ OCR: & Optical Character Recognition ou Reconhecimento Ótico de Caracteres\\
 \include{implementacao}
 
 % Capitulo 6
-%\include{testes}
+\include{conclusao}
 
 
 % Referências

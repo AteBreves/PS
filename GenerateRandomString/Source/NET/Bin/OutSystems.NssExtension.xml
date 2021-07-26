@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OutSystems.NssExtension</name>
+    </assembly>
+    <members>
+        <member name="M:OutSystems.NssExtension.CssExtension.MssGenerateRandomString(System.String@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ssrandom"></param>
+        </member>
+        <member name="M:OutSystems.NssExtension.IssExtension.MssGenerateRandomString(System.String@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ssrandom"></param>
+            <param name="sslength"></param>
+        </member>
+    </members>
+</doc>

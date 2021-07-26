@@ -1,75 +1,75 @@
 \chapter{Análise do Problema} \label{cap:analise}
 
-Tal como apresentado anteriormente, este projeto consiste na realização do sistema informático que designamos por Water Watcher, constituído por três partes: a interface para os utilizadores, o elemento servidor e o elemento que armazena os dados. Estes irão interagir com o sistema informático que a empresa de sistema de fornecimento de água já possui e utiliza.\\
-A figura \ref{fig:modelo} representa o sistema e os seus componentes. O servidor e a interface do utilizador são componentes intrínsecos do sistema, pelo que o sistema não existiria sem eles, enquanto que o sistema de gestão de base de dados será um componente do sistema porém independente. O sistema de gestão de consumos é um outro sistema com o qual o nosso vai comunicar, sendo este sistema o sistema que a empresa fornecedora de água já utiliza para gerir os dados relativos ao seu serviço.
-
-\vspace{1cm} %espaço
+Tal como apresentado anteriormente, neste projeto desenvolvemos um sistema informático que designamos por Water Watcher, que é constituído por três partes: a interface para interação com os utilizadores, o elemento servidor e o elemento que armazena os dados. Estes interagem com o sistema informático que a empresa de sistema de fornecimento de água já possui e utiliza. A Figura \ref{fig:modelo} representa o sistema e os seus componentes.
 
 \begin{figure}[ht!]
 \centering
-\resizebox{150mm}{!}{\includegraphics{diagramas/svg/bdd__Model.pdf}}
+\resizebox{150mm}{!}{\includegraphics{diagramas/Model.png}}
 \caption{Arquitetura do sistema.}
 \label{fig:modelo}
 \end{figure}
 
-A interface para os utilizadores terá como função principal a “leitura” do contador, ou seja, através da câmara do dispositivo, é capturada uma imagem da contagem medida pelo aparelho contador de consumo de água. Este elemento terá garantias de robustez em cenários de utilização real, isto é, deverá saber lidar de forma correta com situações anómalas como o mau estado dos contadores ou leituras erradas por erro do sistema ou do cliente.\\
-Leituras erradas deverão, de forma geral, ser substituídas pela estimativa já calculada pela empresa, ou por uma nova estimativa calculada por este sistema informático.\\
-Este componente poderá também apresentar informações relativas ao consumo de água como estatísticas de consumo em intervalos de tempo definidos, aviso de gastos menores/maiores que o esperado e outras possíveis informações pertinentes ao cliente sobre este serviço.\\
-Outro elemento deste sistema informático será um servidor, cuja função é, resumidamente, interpretar os caracteres das imagens captadas pelos utilizadores e receber os pedidos de informação das interfaces dos utilizadores, comunicá-los ao elemento que armazena os dados e encaminhar a devida resposta de novo à interface dos utilizadores. Também será o servidor o responsável por assegurar a integridade das comunicações, como verificar a origem das mensagens e se não houve alterações das mensagens durante o seu transporte, e garantir o correto acesso das várias funcionalidades do sistema apenas aos utilizadores autorizados.\\
+ O servidor e a interface para interação com os utilizadores, são componentes intrínsecos do sistema desenvolvido, pelo que não existiria sem eles, enquanto que o sistema de gestão de base de dados será um componente do sistema porém independente. O sistema de gestão de consumos é um outro sistema com o qual o nosso comunica, sendo este sistema o sistema que a empresa prestadora do serviço já utiliza para gerir os dados relativos ao seu serviço.\par
+Foi desenvolvido também, para validação do sistema Water Watcher, um sistema informático que simula o sistema utilizado pelo fornecedor do serviço para gerir os clientes e as suas contagens de água.\par
 
-Neste capítulo, na secção \ref{sec:req_sis} vamos explorar os requisitos deve cumprir, nas secções \ref{sec:req_ut}, \ref{sec:req_ut2} e \ref{sec:req_admin} os requisitos da interface dos utilizadores e na secção \ref{sec:req_servidor} vamos explorar os requisitos do servidor. Nas secções \ref{sec:casos_uso}, \ref{sec:casos_servidor} e \ref{sec:casos_iu} vamos abordar, respetivamente, os casos de uso do sistema, do servidor e da interface dos utilizadores.
+A interface para interação com os utilizadores tem como função principal a “leitura” do contador, ou seja, através da câmara do dispositivo, é capturada uma imagem da contagem medida pelo aparelho contador de consumo de água. Este elemento tem garantias de robustez em cenários de utilização real, isto é, sabe lidar de forma correta com situações anómalas como o mau estado dos contadores ou leituras erradas por erro do sistema ou do cliente.\par
+Este componente também apresenta informações relativas ao consumo de água como estatísticas de consumo em intervalos de tempo definidos, aviso de gastos menores/maiores que o esperado e outras informações pertinentes ao cliente sobre este serviço.\par
+Outro elemento deste sistema informático é um servidor, cuja função é, resumidamente, interpretar os caracteres das imagens captadas pelos utilizadores e receber os pedidos de informação das interfaces dos utilizadores, comunicá-los ao elemento que armazena os dados e encaminhar a devida resposta de novo à interface de interação com os utilizadores. Também é o servidor o responsável por assegurar a integridade das comunicações, como verificar a origem das mensagens e se não houve alterações das mensagens durante o seu transporte, e garantir o correto acesso das várias funcionalidades do sistema apenas aos utilizadores autorizados.\par
+
+Neste capítulo, na secção \ref{sec:req_sis} são explorados os requisitos deve cumprir, nas secções \ref{sec:req_ut}, \ref{sec:req_ut2} e \ref{sec:req_admin} os requisitos da interface dos utilizadores e na secção \ref{sec:req_servidor} vamos explorar os requisitos do servidor. Nas secções \ref{sec:casos_uso}, \ref{sec:casos_servidor} e \ref{sec:casos_iu} são abordados, respetivamente, os casos de uso do sistema, do servidor e da interface para interação com os utilizadores.
 
 % REQUISITOS DO SISTEMA
 \section{Requisitos do Sistema} \label{sec:req_sis}
-Uma das primeiras etapas no desenvolvimento de um sistema informático deve ser o levantamento dos requisitos do sistema, ou seja, averiguar as várias funcionalidades que o sistema deverá ter para que este resolva os problemas que se propõe a resolver.\\
+Uma das primeiras etapas no desenvolvimento de um sistema informático deve ser o levantamento dos requisitos do sistema, ou seja, averiguar as várias funcionalidades que o sistema deverá ter para que este resolva os problemas que se propõe a resolver.\par
 Os requisitos classificam-se como funcionais ou não funcionais. Os requisitos funcionais são requisitos que o sistema tem obrigatoriamente que cumprir para operar corretamente. Os requisitos não funcionais são características que, apesar de não serem essenciais ao funcionamento do sistema, garantem funcionalidades importantes para conferir qualidade de utilização, segurança e um bom desempenho do sistema.
 
 % REQUISITOS DA INTERFACE UTILIZADOR
-\section{Requisitos da Interface com o Utilizador.} \label{sec:req_ut}
-A interface de utilizador vai-se dividir em duas interfaces. Uma interface que será comum aos utilizadores clientes e aos administradores e uma interface específica aos administradores, para que haja uma correta separação de funções e permissões no sistema. 
+\section{Requisitos da Interface para Interação com os Utilizadores} \label{sec:req_ut}
+Este sistema é utilizado por dois tipos de utilizadores, classificados consoante as suas permissões neste sistema. Existem os utilizadores clientes da empresa prestadora do serviço, designados por clientes, e os utilizadores com papéis de administração geridos pela entidade que gere este sistema. \par
+A interface para interação com os utilizadores é composta por duas vistas, ou interfaces específicas para um tipo de utilizadores. Uma para os utilizadores clientes e outra específica para os administradores, de forma a existir uma correta separação de funções e permissões no sistema. \par
+Nas subsecções \ref{sec:req_ut2} e \ref{sec:req_admin} analisamos, respetivamente, os requisitos das interfaces de interação com os clientes e com os administradores.
 
-\section{Interface para o Utilizador} \label{sec:req_ut2}
-O sistema terá uma interface de utilização para que os utilizadores possam fácil e intuitivamente efetuar as diversas operações que o sistema disponibiliza. Os vários requisitos estão apresentados na tabela \ref{tab:req_utilizador}, todos eles requisitos funcionais.
+\subsection{Interface para Interação com os Clientes} \label{sec:req_ut2}
+O sistema tem uma interface de utilização para que os utilizadores clientes possam fácil e intuitivamente efetuar as diversas operações que o sistema disponibiliza. Os vários requisitos estão apresentados na Tabela \ref{tab:req_utilizador}, todos eles requisitos funcionais.
 
 %TABELA INTERACAO UTILIZADOR
 \begin{center}
-\captionof{table}{Requisitos funcionais da interface com o utilizador.} 
-\begin{tabular}[c]{c  c }  %para limitar tamanho é p{1.5cm} em vez de um c
+\captionof{table}{Requisitos funcionais da interface para interação com os clientes.} 
+\begin{tabular}[c]{l  c }  %para limitar tamanho é p{1.5cm} em vez de um c
 \hline
 Requisito & Função\\
 \hline
-RF1 & Interação com o utilizador\\ 
+RF 1 & Interação com o utilizador\\ 
 
-RF1.1 & Interação de leitura de contagem\\
+RF 1.1 & Interação de leitura de contagem\\
 
-RF1.1.1 & Envio e captura de leitura\\
+RF 1.1.1 & Envio e captura de leitura\\
 
-RF1.2 & Interface de autenticação\\
+RF 1.2 & Interface de autenticação\\
 
-RF1.3 & Interface de estatísticas\\
+RF 1.3 & Interface de estatísticas\\
 \hline
 \end{tabular}
 \label{tab:req_utilizador}
 \end{center}
 \vspace{8mm} %ESPAÇO
 
-O sistema informático terá interfaces com as quais o utilizador possa interagir para efetuar diferentes operações. Uma dessas interfaces será a interface que permite ao utilizador efetuar a captura da imagem do contador para ser efetuada a leitura dos carateres. Este elemento terá de enviar a imagem capturada, respeitando os vários procedimentos para efetuar um envio seguro e sem erros.\\
-Terá de existir outra interface que permita que o utilizador se autentique. A autenticação divide-se em registo e {\textit{log in}}. Por fim existirá também uma interface dedicada a apresentar ao utilizador estatísticas relacionadas com o seu consumo de água.
+O sistema informático tem interfaces gráficas com as quais o utilizador pode interagir para efetuar diferentes operações. Uma dessas interfaces é a interface que permite ao utilizador efetuar a captura da imagem do contador para ser efetuada a leitura dos carateres. Este elemento é responsável por enviar a imagem capturada, respeitando os vários procedimentos para efetuar um envio seguro e sem erros.\par
+Existe também outra interface gráfica que permita que o utilizador se autentique. A autenticação divide-se em registo e {\textit{login}}. Por fim existe também uma interface dedicada a apresentar ao utilizador estatísticas relacionadas com o seu consumo de água.
 
-
-\section{Interface para o Administrador} \label{sec:req_admin}
-O sistema deverá ter na sua composição uma interface de utilização para os utilizadores administradores. Os vários requisitos funcionais e não funcionais desta interface estão apresentados, respetivamente, nas tabelas \ref{tab:req_admin_f} e \ref{tab:req_admin_n}.
+\subsection{Interface para Interação com os Administradores} \label{sec:req_admin}
+O sistema tem na sua composição uma interface de utilização para os utilizadores administradores. Os vários requisitos funcionais e não funcionais desta interface estão apresentados, respetivamente, nas Tabelas \ref{tab:req_admin_f} e \ref{tab:req_admin_n}.
 
 %TABELA INTERACAO ADMIN FUNCIONAL
 \begin{center}
 \captionof{table}{Requisitos funcionais da interface com utilizadores com permissões de administrador.} 
-\begin{tabular}[c]{c c} 
+\begin{tabular}[c]{l c} 
 \hline
 Requisito & Função\\
 \hline
-RF2 & Interação com o administrador\\ 
+RF 2 & Interação com o administrador\\ 
 
-RF2.1 & Gestão de dados\\
+RF 2.1 & Gestão de dados\\
 
 \hline
 \end{tabular}
@@ -77,16 +77,16 @@ RF2.1 & Gestão de dados\\
 \end{center}
 \vspace{8mm} %ESPAÇO
 
-Esta interface deverá ter um papel de gestão dos dados dos clientes e outras funções como emitir alertas/notificações para todos ou alguns utilizadores. Como é necessário guardar e modificar informações de utilizadores (informações pessoais e informações relativas ao serviço), deverá existir uma interface que permita a determinados utilizadores, com papéis de administração, inserir, modificar e apagar estes dados.
+Esta interface tem um papel de gestão dos dados dos clientes e outras funções como emitir alertas/notificações para todos ou alguns utilizadores. Como é necessário guardar e modificar informações de utilizadores (informações pessoais e informações relativas ao serviço), existe uma interface gráfica que permite a determinados utilizadores, com papéis de administração, inserir, modificar e apagar estes dados.
 
 %TABELA INTERACAO ADMIN FUNCIONAL NAO FUNC
 \begin{center}
 \captionof{table}{Requisitos não funcionais da interface com utilizadores com permissões de administrador.} 
-\begin{tabular}[c]{c c} 
+\begin{tabular}[c]{l c} 
 \hline
 Requisito & Função\\
 \hline
-RnF1 & Anúncios\\
+RnF 1 & Anúncios\\
 \hline
 \end{tabular}
 \label{tab:req_admin_n}
@@ -96,60 +96,62 @@ RnF1 & Anúncios\\
 %\vfill
 %\medskip
 
-Poderá ainda ser necessário contactar um ou vários clientes em específico, e tal deverá poder ser feito através da aplicação.\\
-Todo este módulo do sistema terá de apresentar várias garantias de segurança, nomeadamente, garantir a integridade das comunicações e a segurança dos dados.
+Poderá ainda ser necessário contactar um ou vários clientes em específico, e tal pode ser feito através da aplicação.\par
+Todo este módulo do sistema apresenta várias garantias de segurança, nomeadamente, garantindo a integridade das comunicações e a segurança dos dados.
 
 % REQUISITOS DO SERVIDOR
 \section{Requisitos do Servidor} \label{sec:req_servidor}
  
-O servidor deverá cumprir os requisitos não funcionais presentes na tabela \ref{tab:req_serv_n} e terá de cumprir os requisitos funcionais apresentados na tabela \ref{tab:req_serv_f}.
+O servidor tem de cumprir os requisitos funcionais apresentados na Tabela \ref{tab:req_serv_f} e deve cumprir os requisitos não funcionais presentes na Tabela \ref{tab:req_serv_n}.
+
+%TABELA REQ SERVIDOR NAO FUNCIONAIS
+\begin{center}
+\captionof{table}{Requisitos funcionais do servidor.} 
+\begin{tabular}[c]{l c} 
+\hline
+Requisito & Função\\ %[0.5ex] 
+\hline
+RF 3 & Aceder à informação de utilizador\\ 
+
+RF 3.1 & Editar a informação de utilizador\\
+
+RF 3.2 & Obter a informação de utilizador\\
+\hline
+\end{tabular}
+\label{tab:req_serv_f}
+\end{center}
+
+O servidor é capaz de aceder ao local onde estão armazenadas as informações dos utilizadores.
+Por alterações relativas aos contadores, ao contrato ou às informações pessoais do utilizador, como uma nova morada, é importante ser possível que o servidor tenha, nesse caso, permissões para corrigir as informações guardadas relativas a um utilizador de forma a que esta fique coerente e correta. Também é essencial obter informações sobre os vários utilizadores do serviço de forma a confirmar as suas credências de autenticação ou para apresentar informações personalizadas.\par
+O servidor é responsável por guardar persistentemente na base de dados as contagens de água relativas a cada utilizador.\par
+Por fim, o servidor é o módulo responsável neste sistema por interpretar os caracteres presentes nas imagens que os vários utilizadores capturam dos seus contadores. Para interpretar os caracteres presentes nas fotografias dos contadores, o servidor recorre a um processo de OCR ({\it{Optical Character Recognition}} ou Reconhecimento Óptico de caracteres).
+
+\vspace{2cm}
 
 %TABELA REQ SERVIDOR FUNCIONAIS
 \begin{center}
 \captionof{table}{Requisitos não funcionais do servidor.} 
-\begin{tabular}[c]{c c} 
+\begin{tabular}[c]{l c} 
 \hline
 Requisito & Função\\ %[0.5ex] 
 \hline
-RnF2 & Segurança\\ 
+RnF 2 & Segurança\\ 
 
-RnF2.1 & Opacidade dos Dados\\
+RnF 2.1 & Opacidade dos Dados\\
 
-RnF2.2 & Integridade dos Dados\\
+RnF 2.2 & Integridade dos Dados\\
 \hline
 \end{tabular}
 \label{tab:req_serv_n}
 \end{center}
 \vspace{8mm} %ESPAÇO
 
-À semelhança da interface de utilização, o servidor terá também de garantir a integridade das comunicações e a segurança dos dados. Os dados transportados nas comunicações entre os diversos sistemas não poderão ser visíveis para possíveis atacantes. Também teremos que nos certificar que os dados que chegam ao servidor foram enviados de uma origem fidedigna e que os dados não foram alterados.\\
+À semelhança da interface de utilização, o servidor também garante a integridade das comunicações e a segurança dos dados. Os dados transportados nas comunicações entre os diversos sistemas não poderão ser visíveis para possíveis atacantes. Também temos que nos certificar que os dados que chegam ao servidor foram enviados de uma origem fidedigna e que esses dados não foram alterados.\\
 
-%TABELA REQ SERVIDOR NAO FUNCIONAIS
-\begin{center}
-\captionof{table}{Requisitos funcionais do servidor.} 
-\begin{tabular}[c]{c c} 
-\hline
-Requisito & Função\\ %[0.5ex] 
-\hline
-RF3 & Aceder à informação de utilizador\\ 
-
-RF3.1 & Editar a informação de utilizador\\
-
-RF3.2 & Obter a informação de utilizador\\
-\hline
-\end{tabular}
-\label{tab:req_serv_f}
-\end{center}
-\vspace{8mm} %ESPAÇO
-
-O servidor será capaz de aceder ao local onde estão armazenadas as informações dos utilizadores.
-Por alterações relativas aos contadores, ao contrato ou às informações pessoais do utilizador, como uma nova morada, será importante ser possível que o servidor tenha, nesse caso, permissões para corrigir as informações guardadas relativas a um utilizador de forma a que esta fique coerente e correta. Também será essencial obter informações sobre os vários utilizadores do serviço de forma a confirmar as suas credências de autenticação ou para apresentar informações personalizadas.\\
-O servidor será responsável por guardar persistentemente na base de dados as contagens de água relativas a cada utilizador.\\
-Por fim, será o servidor o módulo responsável neste sistema por interpretar os caracteres presentes nas imagens que os vários utilizadores capturam dos seus contadores. Para interpretar os caracteres presentes nas fotografias dos contadores, o servidor terá de recorrer a um processo de OCR({\it{Optical Character Recognition}} ou Reconhecimento Óptico de caracteres).
 
 % CASOS DE USO *****************************************************************************
 \section{Casos de Uso do Sistema} \label{sec:casos_uso}
-É importante averiguar qual a utilização que o sistema terá e como é que os utilizadores e outros sistemas interagem com o Water Watcher. Para além disso, dado que o sistema será composto por vários módulos, também devemos planear quais as interações entre eles. A figura \ref{fig:uso_sistema} apresenta de forma geral os casos de uso do sistema.
+É importante averiguar qual a utilização que o sistema terá e como é que os utilizadores e outros sistemas interagem com o sistema Water Watcher. Para além disso, dado que o sistema é composto por vários módulos, também devemos planear quais as interações entre eles. A Figura \ref{fig:uso_sistema} apresenta de forma geral os casos de uso do sistema.
 
 \begin{figure}[h!]
 \begin{center}
@@ -159,14 +161,12 @@ Por fim, será o servidor o módulo responsável neste sistema por interpretar o
 \end{center}
 \end{figure}
 
-O sistema, de forma geral, permitirá ao utilizador autenticar-se, submeter as leituras de água e aceder a informações relacionadas com o seu consumo. Após receber a leitura de água do utilizador, o sistema irá processar essa informação e posteriormente enviá-la para o sistema de gestão de consumos. Por fim, o sistema também poderá enviar notificações relativas ao serviço para o utilizador.\\
+O sistema, de forma geral, permite ao utilizador autenticar-se, submeter as leituras de água e aceder a informações relacionadas com o seu consumo. Após receber a leitura de água do utilizador, o sistema irá processar essa informação e posteriormente enviá-la-á para o sistema de gestão de consumos. Por fim, o sistema também pode enviar notificações relativas ao serviço para o utilizador.\par
 Analisámos também os casos de uso específicos para cada componente do sistema, analisando as funções de cada um e as suas interações tanto com utilizadores como com outros componentes do sistema ou até outros sistemas. A secção \label{sec:casos_servidor} descreve os casos de uso do servidor enquanto que a secção \label{sec:casos_iu} descreve os casso de uso da interface do utilizador.
 
 % CASOS DE USO DO SERVIDOR
 \section{Casos de Uso do Servidor} \label{sec:casos_servidor}
-Na figura \ref{fig:uso_serv1} estão presentes os casos de utilização em que o ator, ou seja, onde se iniciam as ações que promovem os processos no sistema, é a interface de utilizador, enquanto que na figura \ref{fig:uso_serv2} o ator é a empresa fornecedora ou a interface de utilização.
-
-\vspace{2cm} %espaço
+Na Figura \ref{fig:uso_serv1} estão presentes os casos de utilização em que o ator, ou seja, onde se iniciam as ações que promovem os processos no sistema, é a interface de utilizador, enquanto que na Figura \ref{fig:uso_serv2} o ator é a empresa prestadora do serviço ou a interface de utilização.
 
 \begin{figure}[h!]
 \begin{center}
@@ -176,27 +176,26 @@ Na figura \ref{fig:uso_serv1} estão presentes os casos de utilização em que o
 \end{center}
 \end{figure}
 
-O servidor está encarregado de receber as fotografias dos contadores enviadas pelos utilizadores e processá-las, ou seja, interpretar os caracteres na fotografia do contador para obter o resultado da contagem e enviar esse resultado para o sistema informático da empresa fornecedora de água.\\
-Também é o responsável por mediar as interações das interfaces de utilização com a base de dados que contém a informação dos utilizadores, confirmando se o utilizador que fez o pedido pode ter acesso às informações que pede, efetuar o pedido à base de dados e enviar o resultado para o cliente que fez o pedido.\\
-Qualquer mensagem recebida tem de ser avaliada para garantir a sua origem e garantir que o conteúdo não se alterou no processo da comunicação. As comunicações provenientes do servidor devem ser cifradas e assinadas de forma a que o destinatário saiba que foi, de facto, o servidor quem enviou essa mensagem e que o conteúdo da mensagem não sofreu alterações indevidas e também para que o conteúdo da mensagem não seja visível para alguém que tenha acesso indevido à mensagem durante o seu transporte.\\
+O servidor está encarregue de receber as fotografias dos contadores enviadas pelos utilizadores e processá-las, ou seja, interpretar os caracteres na fotografia do contador para obter o resultado da contagem e enviar esse resultado para o sistema informático da empresa prestadora do serviço.\par
+Também é o responsável por mediar as interações das interfaces de utilização com a base de dados que contém a informação dos utilizadores, confirmando se o utilizador que fez o pedido pode ter acesso às informações que pede, efetuar o pedido à base de dados e enviar o resultado para o cliente que fez o pedido.\par
+Qualquer mensagem recebida tem de ser avaliada para garantir a sua origem e garantir que o conteúdo não se alterou no processo da comunicação.\par
 
-\vspace{2.5cm} %espaço
 
 \begin{figure}[h!]
 \begin{center}
 \resizebox{110mm}{!}{\includegraphics{diagramas/svg/uc__Servidor2.pdf}}
-\caption{Casos de uso do servidor pela empresa fornecedora ou pelo administrador.}
+\caption{Casos de uso do servidor pela empresa prestadora do serviço ou pelo administrador.}
 \label{fig:uso_serv2}
 \end{center}
 \end{figure}
 
-Quanto às interações promovidas pelos administradores ou pela empresa fornecedora, estas poderão submeter notificações para um ou vários utilizadores, pelo que o servidor depois encaminhará essas notificações para os utilizadores corretos.
+Quanto às interações promovidas pelos administradores ou pela empresa prestadora do serviço, estas poderão submeter notificações para um ou vários utilizadores, pelo que o servidor depois encaminhará essas notificações para os utilizadores corretos.
 
-A figura \ref{fig:state_processamento} representa o processamento das leituras pelo servidor.
+A Figura \ref{fig:state_processamento} representa o processamento das leituras pelo servidor.
 
 \begin{figure}[h!]
 \begin{center}
-\resizebox{110mm}{!}{\includegraphics{diagramas/svg/stm__Processamento_das_leituras__Processamento_das_leituras.pdf}}
+\resizebox{105mm}{!}{\includegraphics{diagramas/svg/stm__Processamento_das_leituras__Processamento_das_leituras.pdf}}
 \caption{Processamento das leituras dos contadores.}
 \label{fig:state_processamento}
 \end{center}
@@ -206,7 +205,7 @@ O processamento das leituras consiste inicialmente em verificar a origem e a int
 
 % CASOS DE USO DA APP MOVEL
 \section{Casos de Uso da Interface de Utilização} \label{sec:casos_iu}
-A interface de utilização também tem vários casos de utilização, apresentados na figura \ref{fig:uso_iu}.
+A interface de utilização também tem vários casos de utilização, apresentados na Figura \ref{fig:uso_iu}.
 
 \begin{figure}[h!]
 \begin{center}
@@ -216,11 +215,11 @@ A interface de utilização também tem vários casos de utilização, apresenta
 \end{center}
 \end{figure}
 
-A interface de utilização é a parte do sistema que trata a interação com os utilizadores. É aqui que o utilizador se autentica, ou seja, efetua o seu registo quando utiliza o sistema pela primeira vez, sendo que nos próximos acessos será naturalmente apenas necessário o {\textit{log in}}.\\
-Poderá posteriormente adicionar ou remover contadores e contratos, bem como alterar as suas informações pessoais. O utilizador pode ter acesso às suas estatísticas de consumo de água e a outras informações relativas ao serviço.\\
-Também poderá então captar uma fotografia do contador para iniciar o processo de informar a empresa da sua contagem de água. À semelhança do servidor, as comunicações deverão ser cifradas e assinadas pelos mesmos motivos.\\
+A interface de utilização é a parte do sistema que trata a interação com os utilizadores. É aqui que o utilizador se autentica, ou seja, efetua o seu registo quando utiliza o sistema pela primeira vez, sendo que nos próximos acessos será naturalmente apenas necessário o {\textit{login}}.\par
+Poderá posteriormente adicionar ou remover contadores e contratos, bem como alterar as suas informações pessoais. O utilizador pode ter acesso às suas estatísticas de consumo de água e a outras informações relativas ao serviço.\par
+Também poderá então captar uma fotografia do contador para iniciar o processo de informar a empresa da sua contagem de água. À semelhança do servidor, as comunicações deverão ser cifradas e assinadas pelos mesmos motivos.\par
 
-A autenticação, descrita na figura \ref{fig:state_autenticacao}, consiste em permitir ao utilizador criar uma conta nova ou aceder com as credenciais de uma conta já existente.
+A autenticação, descrita na Figura \ref{fig:state_autenticacao}, consiste em permitir ao utilizador criar uma conta nova ou aceder com as credenciais de uma conta já existente.
 
 \begin{figure}[ht!]
 \begin{center}
@@ -230,7 +229,7 @@ A autenticação, descrita na figura \ref{fig:state_autenticacao}, consiste em p
 \end{center}
 \end{figure}
 
-A figura \ref{fig:state_envio} descreve o processo de envio de leituras.
+A Figura \ref{fig:state_envio} descreve o processo de envio de leituras.
 
 \begin{figure}[ht!]
 \begin{center}
